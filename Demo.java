@@ -7,7 +7,7 @@ class ContactList{
 	private Contact[] contactArray;
 	private int nextIndex;
 	
-	//-------------------Constuctor----------------------//
+	//-------------------Constructor----------------------//
 	public ContactList(int initialSize){
 		this.contactArray = new Contact[initialSize];
 		this.nextIndex = 0;
