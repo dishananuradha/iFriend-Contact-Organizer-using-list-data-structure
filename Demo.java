@@ -138,8 +138,8 @@ class ContactList{
 		return false;
 	}
 	
-	//----------------print array-------------------//
-    public void printArray(String query){
+	//----------------print contact info-------------------//
+    public void printContactInfo(String query){
 		System.out.printf("\n\n\tContact ID\t\t: %s", contactArray[search(query)].getContactId());
 		System.out.printf("\n\tName\t\t\t: %s", contactArray[search(query)].getName());
 		System.out.printf("\n\tPhone Number\t\t: %s", contactArray[search(query)].getPhoneNumber());
@@ -523,13 +523,13 @@ class Demo{
 				query = input.nextLine().toLowerCase();
 			}
 			
-			//-----------------is there any matching name or phone nnumber?-----------------//
+			//-----------------is there any matching name or phone number?-----------------//
 			if(contactList.search(query) == -1){
 				//------------no match found-----------//
 				System.out.println("\n\tThere is no matching name or phone number...");
 			}else{
 				//--------matching contact found-------//
-				contactList.printArray(query);
+				contactList.printContactInfo(query);
 				System.out.println("\n\n");
 				
 				L1:while(true){
@@ -763,7 +763,7 @@ class Demo{
 				System.out.printf("\n\tNo contacts found for %s...", query);
 			}else{
 				//------matching contact found------//
-				contactList.printArray(query);
+				contactList.printContactInfo(query);
 				
 				System.out.print("\n\n  Do you want to delete this contact (Y/N): ");
 				char ch = input.next().charAt(0);
@@ -838,7 +838,7 @@ class Demo{
 			}else{
 				//------matching contact found------//
 				//------show matching contacts------//
-				contactList.printArray(query);
+				contactList.printContactInfo(query);
 			}
 			
 			System.out.print("\n\n  Do you want to search another contact(Y/N): ");
