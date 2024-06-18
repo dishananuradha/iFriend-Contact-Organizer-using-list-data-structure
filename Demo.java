@@ -45,7 +45,6 @@ class ContactList{
 	
 	//-------------------delete element----------------------//
     public void deleteElement(int x) {
-		
 		sortByContactId();
 		
 		for(int i = nextIndex - 1; i > x; i--){
@@ -117,7 +116,6 @@ class ContactList{
     
     //-------------------search name or phone number existance----------------------//
     public int search(String query){
-		
 		sortByContactId();
 		
 		for(int i = 0; i < nextIndex; i++){
@@ -168,7 +166,6 @@ class ContactList{
 }
 
 class Contact{
-	
 	private String contactId;
 	private String name;
 	private String phoneNumber;
@@ -229,7 +226,6 @@ class Demo{
 		Scanner input = new Scanner(System.in);
 		
 		while(true){
-			
 			System.out.println("\n");
 			System.out.println("            /$$ /$$$$$$$$ /$$$$$$$  /$$$$$$ /$$$$$$$$ /$$   /$$ /$$$$$$$");
 			System.out.println("           |__/| $$_____/| $$__  $$|_  $$_/| $$_____/| $$$ | $$| $$__  $$");
