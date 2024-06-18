@@ -13,9 +13,9 @@ class ContactList{
 		this.nextIndex = 0;
 	}
 	
-	//-------------------get contact array----------------------//
-	public Contact[] getContactArray(){
-		return contactArray;
+	//-------------------get contact using query----------------------//
+	public Contact get(String query){
+		return contactArray[search(query)];
 	}
 	
 	//-------------------isFull?----------------------//
@@ -140,8 +140,8 @@ class ContactList{
 	
 	//----------------print contact info-------------------//
     public void printContactInfo(String query){
-		
 		Contact contact = contactArray[search(query)];
+		
 		System.out.printf("\n\n\tContact ID\t\t: %s", contact.getContactId());
 		System.out.printf("\n\tName\t\t\t: %s", contact.getName());
 		System.out.printf("\n\tPhone Number\t\t: %s", contact.getPhoneNumber());
@@ -581,7 +581,7 @@ class Demo{
 								name = input.nextLine().toLowerCase();
 							}
 
-							contactList.getContactArray()[contactList.search(query)].setName(name);
+							contactList.get(query).setName(name);
 							break L1;
 
 						case 2:
@@ -635,7 +635,7 @@ class Demo{
 								phoneNumber = input.nextLine();
 							}
 
-							contactList.getContactArray()[contactList.search(query)].setPhoneNumber(phoneNumber);
+							contactList.get(query).setPhoneNumber(phoneNumber);
 							break L1;
 
 						case 3:
@@ -667,7 +667,7 @@ class Demo{
 								companyName = input.nextLine();
 							}
 
-							contactList.getContactArray()[contactList.search(query)].setCompanyName(companyName);
+							contactList.get(query).setCompanyName(companyName);
 							break L1;
 
 						case 4:
@@ -697,7 +697,7 @@ class Demo{
 								salary = input.nextInt();
 							}
 
-							contactList.getContactArray()[contactList.search(query)].setSalary(salary);
+							contactList.get(query).setSalary(salary);
 							break L1;
 
 						default:
