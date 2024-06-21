@@ -43,15 +43,16 @@ class ContactList{
 		nextIndex++;
 	}
 	
-	//-------------------delete element----------------------//
-    public void deleteElement(int x) {
+	//-------------------delete contact----------------------//
+    public void delete(String query) {
+		int index = search(query);
 		sortByContactId();
 		
-		for(int i = nextIndex - 1; i > x; i--){
+		for(int i = nextIndex - 1; i > index; i--){
 			contactArray[i].setContactId(contactArray[i-1].getContactId());
 		}
 		
-		for (int i = x; i < nextIndex-1; i++){
+		for (int i = index; i < nextIndex-1; i++){
 			contactArray[i]=contactArray[i+1];
 		}
 		nextIndex--;
@@ -768,7 +769,7 @@ class Demo{
 				
 				if(ch == 'Y' || ch == 'y'){
 
-					contactList.deleteElement(contactList.search(query));                     //delete the element
+					contactList.delete(query);        //delete the contact
 					System.out.println("\n\tContact has been deleted successfully...");
 
 				}else if(ch == 'N' || ch == 'n'){
